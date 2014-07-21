@@ -21,6 +21,8 @@
 		09C3B49C197CC73D002D4472 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C3B47E197CC73D002D4472 /* UIKit.framework */; };
 		09C3B4A4197CC73D002D4472 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09C3B4A2197CC73D002D4472 /* InfoPlist.strings */; };
 		09C3B4A6197CC73D002D4472 /* ParseTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C3B4A5197CC73D002D4472 /* ParseTestTests.m */; };
+		09C3B4BD197D1B56002D4472 /* VWTableVController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C3B4BC197D1B56002D4472 /* VWTableVController.m */; };
+		255FD9FF6455422AB3589D17 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E3364EE484473994B674F3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		09C3B4A1197CC73D002D4472 /* ParseTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ParseTestTests-Info.plist"; sourceTree = "<group>"; };
 		09C3B4A3197CC73D002D4472 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		09C3B4A5197CC73D002D4472 /* ParseTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParseTestTests.m; sourceTree = "<group>"; };
+		09C3B4BB197D1B56002D4472 /* VWTableVController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWTableVController.h; sourceTree = "<group>"; };
+		09C3B4BC197D1B56002D4472 /* VWTableVController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWTableVController.m; sourceTree = "<group>"; };
+		2F10EE8A0AEC4C3A920BD478 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		E6E3364EE484473994B674F3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,7 @@
 				09C3B47D197CC73D002D4472 /* CoreGraphics.framework in Frameworks */,
 				09C3B47F197CC73D002D4472 /* UIKit.framework in Frameworks */,
 				09C3B47B197CC73D002D4472 /* Foundation.framework in Frameworks */,
+				255FD9FF6455422AB3589D17 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +93,7 @@
 				09C3B49F197CC73D002D4472 /* ParseTestTests */,
 				09C3B479197CC73D002D4472 /* Frameworks */,
 				09C3B478197CC73D002D4472 /* Products */,
+				2F10EE8A0AEC4C3A920BD478 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +113,7 @@
 				09C3B47C197CC73D002D4472 /* CoreGraphics.framework */,
 				09C3B47E197CC73D002D4472 /* UIKit.framework */,
 				09C3B499197CC73D002D4472 /* XCTest.framework */,
+				E6E3364EE484473994B674F3 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,6 +124,8 @@
 				09C3B489197CC73D002D4472 /* VWAppDelegate.h */,
 				09C3B48A197CC73D002D4472 /* VWAppDelegate.m */,
 				09C3B48C197CC73D002D4472 /* Main.storyboard */,
+				09C3B4BB197D1B56002D4472 /* VWTableVController.h */,
+				09C3B4BC197D1B56002D4472 /* VWTableVController.m */,
 				09C3B48F197CC73D002D4472 /* VWViewController.h */,
 				09C3B490197CC73D002D4472 /* VWViewController.m */,
 				09C3B492197CC73D002D4472 /* Images.xcassets */,
@@ -159,9 +170,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09C3B4A9197CC73D002D4472 /* Build configuration list for PBXNativeTarget "ParseTest" */;
 			buildPhases = (
+				35339925D5934FCF8C5B157B /* Check Pods Manifest.lock */,
 				09C3B473197CC73D002D4472 /* Sources */,
 				09C3B474197CC73D002D4472 /* Frameworks */,
 				09C3B475197CC73D002D4472 /* Resources */,
+				C33AF493252A41F0B27B7CB1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,6 +258,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		35339925D5934FCF8C5B157B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C33AF493252A41F0B27B7CB1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		09C3B473197CC73D002D4472 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -253,6 +299,7 @@
 				09C3B491197CC73D002D4472 /* VWViewController.m in Sources */,
 				09C3B487197CC73D002D4472 /* main.m in Sources */,
 				09C3B48B197CC73D002D4472 /* VWAppDelegate.m in Sources */,
+				09C3B4BD197D1B56002D4472 /* VWTableVController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +421,7 @@
 		};
 		09C3B4AA197CC73D002D4472 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F10EE8A0AEC4C3A920BD478 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -387,6 +435,7 @@
 		};
 		09C3B4AB197CC73D002D4472 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F10EE8A0AEC4C3A920BD478 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -457,6 +506,7 @@
 				09C3B4AB197CC73D002D4472 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		09C3B4AC197CC73D002D4472 /* Build configuration list for PBXNativeTarget "ParseTestTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +515,7 @@
 				09C3B4AE197CC73D002D4472 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
